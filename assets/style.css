@@ -1,11 +1,118 @@
 /*General*/
 
+
 h1 {
   font-size: 2rem;
+  color: white;
 }
 
-button{
-  background-color:green;
+p {
+  color: white;
+}
+
+body {
+  background-color:#1B221C;
+}
+
+/*Targetted */
+
+#bannercolor{
+  background-color: #004C05;
+}
+
+
+#banner{
+  max-width:980px;
+  margin: 0 auto;
+  color: white;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 40px 40px;
+}
+
+#bannerbutton{
+  border-style:none;
+  background-color: #1B221C;
+  color: white;
+  padding:5px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition-duration: 0.4s;
+  position: absolute;
+  left: 40px;
+  top: 20px;
+}
+
+
+#bannerbutton:hover {
+  background-color: white; 
+  color: #004C05;
+  box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
+}
+
+
+#clock{
+  right: 40px;
+  height: 0px;
+  line-height: 0px;
+  position: absolute;
+  text-align: center;
+}
+
+
+
+
+
+#flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  margin: auto;
+  overflow:auto;
+}
+
+
+#quizintro{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+#quizintro button{
+  background-color:#004C05;
+  color:white;
+  border: none;
+  padding:10px 24px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition-duration: 0.4s;
+}
+
+#quizintro button:hover {
+  background-color: white; 
+  color: #004C05;
+  box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
+}
+
+
+#quiz{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#quiz button{
+  background-color:#004C05;
   color:white;
   border: none;
   padding:5px;
@@ -14,28 +121,18 @@ button{
   transition-duration: 0.4s;
 }
 
-button:hover {
+#quiz button:hover {
   background-color: white; 
-  color: green;
-  box-shadow: inset 0px 0px 2px green, 0 0 2px green;
+  color: #004C05;
+  box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
 }
 
 
-/*Targetted */
 
-#quizbox{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align:center;
-  max-width: 50%;
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
+
+
+
 
 .hide{
   display:none;
