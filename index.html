@@ -12,55 +12,71 @@
 </head>
 
 <body>
-
-    <div id="bannercolor">
-        <div id="banner">
-            <button id = "bannerbutton" href="">View High Scores</button>
-            <div id="clock">
-                <p>Time Remaining:</p>
+    <header>
+        <div id="bannercolor" class="bannercolor">
+            <div class="banner">
+                <button id="high-score" href="">View High Scores</button>
+                <div class="clock" id="clock">
+                    <p>Time Remaining:</p>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
-<div id="flexcolor">
-    <div id="flex" >
-        <section id="quizintro">
-            <!-- Quiz Beginning/Intro-->
-            <h1>Javascript Coding Quiz Challenge!</h1>
+    <div id="flex">
+        <div>
+            <section id="quizstart">
+                <!-- Quiz Beginning/Intro-->
+                <h1>Javascript Coding Quiz Challenge!</h1>
 
-            <p> Answer the following javascript questions to test your knowledge before the timer runs out.
-                Correct answers add a point while wrong answers removes time by ten seconds from your remaining time.
-                Good Luck and May the Odds Ever be in your Favor!!
-            </p>
+                <p> Answer the following javascript questions to test your knowledge before the timer runs out.
+                    Correct answers add a point while wrong answers removes time by ten seconds from your remaining
+                    time.
+                    Good Luck and May the Odds Ever be in your Favor!!
+                </p>
+                <div>
+                    <button id="start"> Begin Quiz </button>
+                </div>
+            </section>
 
-            <button> Begin Quiz </button>
+            <section id="quiz" class="hide">
+                <p id="question">Insert Question here</p>
+                <!-- Multiple choice buttons-->
+                <div id="answers" class="buttongrid">
+                    <button>Option 1</button>
+                    <button>Option 2</button>
+                    <button>Option 3</button>
+                    <button>Option 4</button>
+                </div>
+            </section>
 
+
+
+
+            <section id="quizend" class="hide">
+                <!-- Quiz Ending/Outro-->
+                <h1>Congratulation you have completed the Quiz!</h1>
+                <p>Here is your final score:</p>
+                <p>Enter initials: </p>
+            </section>
+
+        </div>
+
+
+
+        <section id="scoreboard" class="hide">
+            <h1>High Scores</h1>
+            <div id="highscore" class="highscore highscore-list">
+            </div>
+            <div class=>
+                <button id="restart">Restart</button>
+                <button id="clearscores">Clear Highscores</button>
+            </div>
         </section>
-
-        <section id="quiz" class="hide">
-            <p>Insert Question here</p>
-            <!-- Multiple choice buttons-->
-            <button>Option 1</button>
-            <button>Option 2</button>
-            <button>Option 3</button>
-            <button>Option 4</button>
-            <button>Option 5</button>
-
-        </section>
-
     </div>
 
-
-    <section class="hide">
-        <!-- Quiz Ending/Outro-->
-        <h1>Congratulation you have completed the Quiz!</h1>
-        <p>Here is your final score:</p>
-        <p>Enter initials: </p>
-    </section>
-
     </div>
-
-</div>
+    </div>
 
 </body>
 

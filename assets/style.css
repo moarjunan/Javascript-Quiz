@@ -14,14 +14,14 @@ body {
   background-color:#1B221C;
 }
 
-/*Targetted */
+/*Targetted, ordered by use in html sequence */
 
-#bannercolor{
+.bannercolor{
   background-color: #004C05;
 }
 
 
-#banner{
+.banner{
   max-width:980px;
   margin: 0 auto;
   color: white;
@@ -32,7 +32,7 @@ body {
   padding: 40px 40px;
 }
 
-#bannerbutton{
+.banner button{
   border-style:none;
   background-color: #1B221C;
   color: white;
@@ -46,14 +46,14 @@ body {
 }
 
 
-#bannerbutton:hover {
+.banner button:hover {
   background-color: white; 
   color: #004C05;
   box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
 }
 
 
-#clock{
+.clock{
   right: 40px;
   height: 0px;
   line-height: 0px;
@@ -63,29 +63,23 @@ body {
 
 
 
-
-
 #flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 50%;
-  margin: auto;
-  overflow:auto;
-}
-
-
-#quizintro{
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  
 }
 
-#quizintro button{
+
+
+
+#quizstart button{
   background-color:#004C05;
   color:white;
   border: none;
@@ -95,20 +89,20 @@ body {
   transition-duration: 0.4s;
 }
 
-#quizintro button:hover {
+#quizstart button:hover {
   background-color: white; 
   color: #004C05;
   box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
 }
 
 
-#quiz{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+
+
+.buttongrid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
 }
 
 #quiz button{
@@ -128,6 +122,21 @@ body {
 }
 
 
+#scoreboard button{
+  background-color:#004C05;
+  color:white;
+  border: none;
+  padding:5px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition-duration: 0.4s;
+}
+
+#scoreboard button:hover {
+  background-color: white; 
+  color: #004C05;
+  box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
+}
 
 
 
