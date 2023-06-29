@@ -13,21 +13,31 @@
 
 <body>
 
-    <div id="quizbox">
-        <section>
-            <!-- Quiz Beginning/Intro-->
-            <h1 id = "quizbox-h1">Javascript Coding Quiz Challenge!</h1>
+    <div id="bannercolor">
+        <div id="banner">
+            <button id = "bannerbutton" href="">View High Scores</button>
+            <div id="clock">
+                <p>Time Remaining:</p>
+            </div>
+        </div>
+    </div>
 
-            <p>Answer the following javascript questions to test your knowledge before the timer runs out.
+<div id="flexcolor">
+    <div id="flex" >
+        <section id="quizintro">
+            <!-- Quiz Beginning/Intro-->
+            <h1>Javascript Coding Quiz Challenge!</h1>
+
+            <p> Answer the following javascript questions to test your knowledge before the timer runs out.
                 Correct answers add a point while wrong answers removes time by ten seconds from your remaining time.
                 Good Luck and May the Odds Ever be in your Favor!!
             </p>
 
-            <button>Begin Quiz</button>
+            <button> Begin Quiz </button>
 
         </section>
 
-        <section>
+        <section id="quiz" class="hide">
             <p>Insert Question here</p>
             <!-- Multiple choice buttons-->
             <button>Option 1</button>
@@ -35,11 +45,11 @@
             <button>Option 3</button>
             <button>Option 4</button>
             <button>Option 5</button>
-     
+
         </section>
-        
+
     </div>
-    
+
 
     <section class="hide">
         <!-- Quiz Ending/Outro-->
@@ -50,7 +60,7 @@
 
     </div>
 
-
+</div>
 
 </body>
 
