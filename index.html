@@ -7,60 +7,87 @@
     <title>Javascript Code Quiz</title>
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/style.css">
-    <script src="assets/questions.js"></script>
-    <script src="assets/script.js"></script>
+
 </head>
 
 <body>
-
-    <div id="bannercolor">
-        <div id="banner">
-            <button id = "bannerbutton" href="">View High Scores</button>
-            <div id="clock">
-                <p>Time Remaining:</p>
+    <header>
+        <div id="bannercolor" class="bannercolor">
+            <div class="banner">
+                <button id="history" type="button">View High Scores</button>
+                <div class="clock" id="clock">
+                    <p>Time Remaining:<span id="countdown">0</span></p>
+                </div>
+                <div id="timesUp">Time's Up!</div>
+            </div>
             </div>
         </div>
-    </div>
+    </header>
 
-<div id="flexcolor">
-    <div id="flex" >
-        <section id="quizintro">
-            <!-- Quiz Beginning/Intro-->
-            <h1>Javascript Coding Quiz Challenge!</h1>
+    <div id="flex">
+        <div>
+            <section id="quizstart" >
+                <!-- Quiz Beginning/Intro-->
+                <h1>Javascript Coding Quiz Challenge!</h1>
 
-            <p> Answer the following javascript questions to test your knowledge before the timer runs out.
-                Correct answers add a point while wrong answers removes time by ten seconds from your remaining time.
-                Good Luck and May the Odds Ever be in your Favor!!
-            </p>
+                <p> Answer the following javascript questions to test your knowledge before the timer runs out.
+                    Correct answers add a point while wrong answers removes time by ten seconds from your remaining
+                    time.
+                    Good Luck and May the Odds Ever be in your Favor!!
+                </p>
+                <div>
+                    <button id="startbtn"> Begin Quiz </button>
+                </div>
+            </section>
 
-            <button> Begin Quiz </button>
+            <section id="quiz" class="hide">
+                <p id="question">Insert Question here</p>
+                <!-- Multiple choice buttons-->
+                <div class="buttongrid">
+                    <button id="A" >Option 1</button>
+                    <button id="B" >Option 2</button>
+                    <button id="C" >Option 3</button>
+                    <button id="D" >Option 4</button>
+                </div>
+                <div id="lineBreak" >
+                    <p id="answer"></p>
+                    </div>
+            </section>
 
+
+
+
+            <section id="quizend" class="hide">
+                <!-- Quiz Ending/Outro-->
+                <h1>Congratulation you have completed the Quiz!</h1>
+                <p>Here is your final score:<span id="finalscore"></span></p>
+                <form>
+                <p>Enter initials: <input id="initials"  type="text">
+                <button id="initialsbutton">Enter</button>
+                </p>
+                </form>
+            </section>
+
+        </div>
+
+
+
+        <section id="scoreboard" class="hide">
+            <h1>High Scores</h1>
+            <div id="highscore" class="highscore highscore-list">
+            </div>
+            <div class=>
+                <button type="submit" id="restart">Restart</button>
+                <button type="submit" id="clearscores">Clear Highscores</button>
+            </div>
         </section>
-
-        <section id="quiz" class="hide">
-            <p>Insert Question here</p>
-            <!-- Multiple choice buttons-->
-            <button>Option 1</button>
-            <button>Option 2</button>
-            <button>Option 3</button>
-            <button>Option 4</button>
-            <button>Option 5</button>
-
-        </section>
-
     </div>
 
-
-    <section class="hide">
-        <!-- Quiz Ending/Outro-->
-        <h1>Congratulation you have completed the Quiz!</h1>
-        <p>Here is your final score:</p>
-        <p>Enter initials: </p>
-    </section>
-
+    </div>
     </div>
 
-</div>
+    <script src="assets/script.js"></script>
+
 
 </body>
 

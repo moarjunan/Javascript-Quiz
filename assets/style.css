@@ -14,14 +14,14 @@ body {
   background-color:#1B221C;
 }
 
-/*Targetted */
+/*Targetted, ordered by use in html sequence */
 
-#bannercolor{
+.bannercolor{
   background-color: #004C05;
 }
 
 
-#banner{
+.banner{
   max-width:980px;
   margin: 0 auto;
   color: white;
@@ -32,7 +32,7 @@ body {
   padding: 40px 40px;
 }
 
-#bannerbutton{
+.banner button{
   border-style:none;
   background-color: #1B221C;
   color: white;
@@ -46,14 +46,22 @@ body {
 }
 
 
-#bannerbutton:hover {
+.banner button:hover {
   background-color: white; 
   color: #004C05;
   box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
 }
 
+.banner #timesup {
+  right: 40px;
+  height: 0px;
+  line-height: 0px;
+  position: absolute;
+  text-align: center;
+  display: none;
+} 
 
-#clock{
+.clock{
   right: 40px;
   height: 0px;
   line-height: 0px;
@@ -63,29 +71,23 @@ body {
 
 
 
-
-
 #flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 50%;
-  margin: auto;
-  overflow:auto;
-}
-
-
-#quizintro{
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  
 }
 
-#quizintro button{
+
+
+
+#quizstart button{
   background-color:#004C05;
   color:white;
   border: none;
@@ -95,20 +97,20 @@ body {
   transition-duration: 0.4s;
 }
 
-#quizintro button:hover {
+#quizstart button:hover {
   background-color: white; 
   color: #004C05;
   box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
 }
 
 
-#quiz{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+
+
+.buttongrid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
 }
 
 #quiz button{
@@ -129,7 +131,58 @@ body {
 
 
 
+#linebreak {
+  border-top: 1px solid #999;
+  color: #41275e;
+  font-size: 1.3em;
+  margin: 0;
+  font-style: italic;
+  font-weight:700;
+  margin: 10px auto;
+}
 
+#linebreak p {
+margin:0;
+margin-top:10px;
+}
+
+.invisible{
+  visibility:hidden;
+}
+
+
+
+#quizend button{
+  background-color:#004C05;
+  color:white;
+  border: none;
+  padding:10px 24px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition-duration: 0.4s;
+}
+
+#quizend button:hover {
+  background-color: white; 
+  color: #004C05;
+  box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
+}
+
+#scoreboard button{
+  background-color:#004C05;
+  color:white;
+  border: none;
+  padding:5px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition-duration: 0.4s;
+}
+
+#scoreboard button:hover {
+  background-color: white; 
+  color: #004C05;
+  box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
+}
 
 
 
