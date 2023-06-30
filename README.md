@@ -8,6 +8,8 @@ Bootcamp Challenge 04: Web APIs
 Description
 This repository was created to record the creation of a multiple choice javacript quiz. The primary motivation for this repo is to create a easy quix that can be used to create a javascript quiz based on specified requirements. The secondary motivation for this repo was to provide easy access to a clear and completed work flow of the changes made to the code to meet the assignment critieria. The primary problem we aim to solve is testing our knowledge for coding interviews!
 
+https://moarjunan.github.io/Javascript-Quiz/
+
 ![demo](/assets/demo.gif)
 
 
