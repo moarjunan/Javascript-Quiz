@@ -52,6 +52,14 @@ body {
   box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
 }
 
+.banner #timesup {
+  right: 40px;
+  height: 0px;
+  line-height: 0px;
+  position: absolute;
+  text-align: center;
+  display: none;
+} 
 
 .clock{
   right: 40px;
@@ -122,6 +130,44 @@ body {
 }
 
 
+
+#linebreak {
+  border-top: 1px solid #999;
+  color: #41275e;
+  font-size: 1.3em;
+  margin: 0;
+  font-style: italic;
+  font-weight:700;
+  margin: 10px auto;
+}
+
+#linebreak p {
+margin:0;
+margin-top:10px;
+}
+
+.invisible{
+  visibility:hidden;
+}
+
+
+
+#quizend button{
+  background-color:#004C05;
+  color:white;
+  border: none;
+  padding:10px 24px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition-duration: 0.4s;
+}
+
+#quizend button:hover {
+  background-color: white; 
+  color: #004C05;
+  box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
+}
+
 #scoreboard button{
   background-color:#004C05;
   color:white;
@@ -137,8 +183,6 @@ body {
   color: #004C05;
   box-shadow: inset 0px 0px 2px #004C05, 0 0 2px #004C05;
 }
-
-
 
 
 

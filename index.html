@@ -7,25 +7,26 @@
     <title>Javascript Code Quiz</title>
     <link rel="stylesheet" href="assets/reset.css">
     <link rel="stylesheet" href="assets/style.css">
-    <script src="assets/questions.js"></script>
-    <script src="assets/script.js"></script>
+
 </head>
 
 <body>
     <header>
         <div id="bannercolor" class="bannercolor">
             <div class="banner">
-                <button id="high-score" href="">View High Scores</button>
+                <button id="history" type="button">View High Scores</button>
                 <div class="clock" id="clock">
-                    <p>Time Remaining:</p>
+                    <p>Time Remaining:<span id="countdown">0</span></p>
                 </div>
+                <div id="timesUp">Time's Up!</div>
+            </div>
             </div>
         </div>
     </header>
 
     <div id="flex">
         <div>
-            <section id="quizstart">
+            <section id="quizstart" >
                 <!-- Quiz Beginning/Intro-->
                 <h1>Javascript Coding Quiz Challenge!</h1>
 
@@ -35,19 +36,22 @@
                     Good Luck and May the Odds Ever be in your Favor!!
                 </p>
                 <div>
-                    <button id="start"> Begin Quiz </button>
+                    <button id="startbtn"> Begin Quiz </button>
                 </div>
             </section>
 
             <section id="quiz" class="hide">
                 <p id="question">Insert Question here</p>
                 <!-- Multiple choice buttons-->
-                <div id="answers" class="buttongrid">
-                    <button>Option 1</button>
-                    <button>Option 2</button>
-                    <button>Option 3</button>
-                    <button>Option 4</button>
+                <div class="buttongrid">
+                    <button id="A" >Option 1</button>
+                    <button id="B" >Option 2</button>
+                    <button id="C" >Option 3</button>
+                    <button id="D" >Option 4</button>
                 </div>
+                <div id="lineBreak" >
+                    <p id="answer"></p>
+                    </div>
             </section>
 
 
@@ -56,8 +60,12 @@
             <section id="quizend" class="hide">
                 <!-- Quiz Ending/Outro-->
                 <h1>Congratulation you have completed the Quiz!</h1>
-                <p>Here is your final score:</p>
-                <p>Enter initials: </p>
+                <p>Here is your final score:<span id="finalscore"></span></p>
+                <form>
+                <p>Enter initials: <input id="initials"  type="text">
+                <button id="initialsbutton">Enter</button>
+                </p>
+                </form>
             </section>
 
         </div>
@@ -69,14 +77,17 @@
             <div id="highscore" class="highscore highscore-list">
             </div>
             <div class=>
-                <button id="restart">Restart</button>
-                <button id="clearscores">Clear Highscores</button>
+                <button type="submit" id="restart">Restart</button>
+                <button type="submit" id="clearscores">Clear Highscores</button>
             </div>
         </section>
     </div>
 
     </div>
     </div>
+
+    <script src="assets/script.js"></script>
+
 
 </body>
 
