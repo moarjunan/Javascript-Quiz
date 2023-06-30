@@ -1,31 +1,32 @@
-const questions = [
-    {
-        question: "Question 1?",
-        choices: ["a. a", "b. b", "c. c", "d. d"],
-        solution: "d. d"
-    },
-    {
-		question: "Question 2?",
-        choices: ["a. a", "b. b", "c. c", "d. d"],
-        solution: "d. d"
-    },
-    {
-		question: "Question 3?",
-        choices: ["a. a", "b. b", "c. c", "d. d"],
-        solution: "d. d"
-    },
-    {
-		question: "Question 4?",
-        choices: ["a. a", "b. b", "c. c", "d. d"],
-        solution: "d. d"
-    },
-    {
-		question: "Question 5?",
-        choices: ["a. a", "b. b", "c. c", "d. d"],
-        solution: "d. d"
-    }
+var questions = [
+	{
+		question: "FIll in the blank: Javascript is a ______ language.",
+		choices: ["a. Object Oriented", "b. Object Based", "c. Procedural", "d. All of the above"],
+		solution: "a. Object Oriented"
+	},
+	{
+		question: "When an operator’s value is NULL, the typeof returned by the unary operator is:?",
+		choices: ["a. Boolean", "b. Undefined", "c. Object", "d. Integer"],
+		solution: "c. Object"
+	},
+	{
+		question: "Which of the following declarations is used to define a variable in Javascript?",
+		choices: ["a. var", "b. cons", "c. let", "d. All of the above"],
+		solution: "d. All of the above"
+	},
+	{
+		question: "Which of the following methods is used to access HTML elements using Javascript??",
+		choices: ["a. getElementById", "b. queryselector", "c. Both A and B", "d. None of the above"],
+		solution: "c. Both A and B"
+	},
+	{
+		question: "Which function is used to serialize an object into a JSON string in Javascript??",
+		choices: ["a. stringify()", "b. parse()", "c. convert()", "d. All of the above"],
+		solution: "a. stringify()"
+	}
 ];
 
+/*defining all variables used by element ID*/
 
 var flex = document.getElementById("flex");
 var viewscores = document.getElementById("viewscores");
@@ -49,74 +50,74 @@ var InitialBtn = document.getElementById("initialsbutton");
 var scoreboard = document.getElementById("scoreboard");
 var highscore = document.getElementById("highscore");
 var restart = document.getElementById("restart");
-var clearscores = document.getElementById("clearscores"); 
+var clearscores = document.getElementById("clearscores");
 var correctAns = 0;
 var questionNum = 0;
-var scoreResult;
-var questionIndex = 0;
+var result;
+var questionarray = 0;
 var counter = 121;
 
-
+/*Functions*/
 
 function startQuiz() {
-    questionIndex = 0;
-    counter = 120;
-    countdown.textContent = counter;
-    initial.textContent = "";
+	questionarray = 0;
+	counter = 120;
+	countdown.textContent = counter;
+	initial.textContent = "";
 
-    quizstart.style.display = "none";
-    quiz.style.display = "block";
-    clock.style.display = "block";
-    timesUp.style.display = "none";
+	quizstart.style.display = "none";
+	quiz.style.display = "block";
+	clock.style.display = "block";
+	timesUp.style.display = "none";
 
-    var startTimer = setInterval(function() {
-        counter--;
-        countdown.textContent = counter;
-        if(counter <= 0) {
-            clearInterval(startTimer);
-            if (questionIndex < questions.length - 1) {
-                gameOver();
-            }
-        }
-    },1000);
+	var startTimer = setInterval(function () {
+		counter--;
+		countdown.textContent = counter;
+		if (counter <= 0) {
+			clearInterval(startTimer);
+			if (questionarray < questions.length - 1) {
+				endquiz();
+			}
+		}
+	}, 1000);
 
-    showQuiz();
+	startquestions();
 };
 
-function showQuiz() {
-    nextQuestion();
+function startquestions() {
+	nextquestion();
 }
 
-function nextQuestion() {
-    question.textContent = questions[questionIndex].question;
-    choiceA.textContent = questions[questionIndex].choices[0];
-    choiceB.textContent = questions[questionIndex].choices[1];
-    choiceC.textContent = questions[questionIndex].choices[2];
-    choiceD.textContent = questions[questionIndex].choices[3];
+function nextquestion() {
+	question.textContent = questions[questionarray].question;
+	choiceA.textContent = questions[questionarray].choices[0];
+	choiceB.textContent = questions[questionarray].choices[1];
+	choiceC.textContent = questions[questionarray].choices[2];
+	choiceD.textContent = questions[questionarray].choices[3];
 }
 
 
 function checkAnswer(solution) {
 
-    lineBreak.style.display = "block";
-    answer.style.display = "block";
+	lineBreak.style.display = "block";
+	answer.style.display = "block";
 
-    if (questions[questionIndex].solution === questions[questionIndex].choices[solution]) {
-        correctAns++;
-        answer.textContent = "Correct!";
-    } else {
-        counter -= 10;
-        countdown.textContent = counter;
-        answer.textContent = "Wrong! The correct answer is: " + questions[questionIndex].solution;
-    }
+	if (questions[questionarray].solution === questions[questionarray].choices[solution]) {
+		correctAns++;
+		answer.textContent = "Wow so smart, keep going!";
+	} else {
+		counter -= 10;
+		countdown.textContent = counter;
+		answer.textContent = "EHHH! Try again, the answer is: " + questions[questionarray].solution;
+	}
 
-    questionIndex++;
-   
-    if (questionIndex < questions.length) {
-        nextQuestion();
-    } else {
-        gameOver();
-    }
+	questionarray++;
+
+	if (questionarray < questions.length) {
+		nextquestion();
+	} else {
+		endquiz();
+	}
 }
 
 function chooseA() { checkAnswer(0); }
@@ -128,86 +129,88 @@ function chooseC() { checkAnswer(2); }
 function chooseD() { checkAnswer(3); }
 
 
-function gameOver() {
-    quizend.style.display = "block";
-    quiz.style.display = "none";
-    quizstart.style.display = "none";
-    clock.style.display = "none";
-    timesUp.style.display = "block";
+function endquiz() {
+	quizend.style.display = "block";
+	quiz.style.display = "none";
+	quizstart.style.display = "none";
+	clock.style.display = "none";
+	timesUp.style.display = "block";
 
- 
-    finalScore.textContent = correctAns;
+
+	finalScore.textContent = correctAns;
 }
 
 
 function storeHighScores(event) {
-    event.preventDefault();
+	scores
+	event.preventDefault();
 
 
-    if (initial.value === "") {
-        alert("Please enter your initials!");
-        return;
-    } 
+	if (initial.value === "") {
+		alert("Your claim to fame! Enter your initials");
+		return;
+	}
 
-    quizstart.style.display = "none";
-    clock.style.display = "none";
-    timesUp.style.display = "none";
-    quizend.style.display = "none";
-    scoreboard.style.display = "block";   
+	quizstart.style.display = "none";
+	clock.style.display = "none";
+	timesUp.style.display = "none";
+	quizend.style.display = "none";
+	scoreboard.style.display = "block";
 
-  
-    var savedHighScores = localStorage.getItem("high scores");
-    var scoresArray;
 
-    if (savedHighScores === null) {
-        scoresArray = [];
-    } else {
-        scoresArray = JSON.parse(savedHighScores)
-    }
+	var storedscores = localStorage.getItem("your score");
+	var scoresArray;
 
-    var userScore = {
-        initials: initial.value,
-        score: finalScore.textContent
-    };
+	if (storedscores === null) {
+		scoresArray = [];
+	} else {
+		scoresArray = JSON.parse(storedscores)
+	}
 
-    console.log(userScore);
-    scoresArray.push(userScore);
+	var yourscore = {
+		initials: initial.value,
+		score: finalScore.textContent
+	};
 
-   
-    var scoresArrayString = JSON.stringify(scoresArray);
-    window.localStorage.setItem("high scores", scoresArrayString);
-    
+	console.log(yourscore);
+	scoresArray.push(yourscore);
 
-    showHighScores();
+
+	var scoresArrayString = JSON.stringify(scoresArray);
+	window.localStorage.setItem("your score", scoresArrayString);
+
+
+	keptscore();
 }
 
 
 var i = 0;
-function showHighScores() {
+function keptscore() {
 
-    quizstart.style.display = "none";
-    clock.style.display = "none";
-    quiz.style.display = "none";
-    timesUp.style.display = "none";
-    quizend.style.display = "none";
-    scoreboard.style.display = "block";
+	quizstart.style.display = "none";
+	clock.style.display = "none";
+	quiz.style.display = "none";
+	timesUp.style.display = "none";
+	quizend.style.display = "none";
+	scoreboard.style.display = "block";
 
-    var savedHighScores = localStorage.getItem("high scores");
+	var storedscores = localStorage.getItem("your score");
 
-    if (savedHighScores === null) {
-        return;
-    }
-    console.log(savedHighScores);
+	if (storedscores === null) {
+		return;
+	}
+	console.log(storedscores);
 
-    var storedHighScores = JSON.parse(savedHighScores);
+	var storedHighScores = JSON.parse(storedscores);
 
-    for (; i < storedHighScores.length; i++) {
-        var eachNewHighScore = document.createElement("p");
-        eachNewHighScore.innerHTML = storedHighScores[i].initials + ": " + storedHighScores[i].score;
-        highscore.appendChild(eachNewHighScore);
-    }
+	for (; i < storedHighScores.length; i++) {
+		var eachNewHighScore = document.createElement("p");
+		eachNewHighScore.innerHTML = storedHighScores[i].initials + ": " + storedHighScores[i].score;
+		highscore.appendChild(eachNewHighScore);
+	}
 }
 
+/*Adding Event Listeners*/
 
 startbutton.addEventListener("click", startQuiz);
 choiceA.addEventListener("click", chooseA);
@@ -215,23 +218,23 @@ choiceB.addEventListener("click", chooseB);
 choiceC.addEventListener("click", chooseC);
 choiceD.addEventListener("click", chooseD);
 
-InitialBtn.addEventListener("click", function(event){ 
-    storeHighScores(event);
+InitialBtn.addEventListener("click", function (event) {
+	storeHighScores(event);
 });
 
-restart.addEventListener("click", function() {
-    quizstart.style.display = "block";
-    scoreboard.style.display = "none";
+restart.addEventListener("click", function () {
+	quizstart.style.display = "block";
+	scoreboard.style.display = "none";
 });
 
-clearscores.addEventListener("click", function(){
-    window.localStorage.removeItem("high scores");
-    highscore.innerHTML = "High Scores Cleared!";
+clearscores.addEventListener("click", function () {
+	window.localStorage.removeItem("your score");
+	highscore.innerHTML = "Scoreboard Cleared";
 });
 
 
-viewscores.addEventListener("click", function(event) { 
-    showHighScores(event);
+viewscores.addEventListener("click", function (event) {
+	keptscore(event);
 });
 
 
