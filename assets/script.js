@@ -158,7 +158,7 @@ function storeHighScores(event) {
 	scoreboard.style.display = "block";
 
 
-	var storedscores = localStorage.getItem("your score");
+	var storedscores = localStorage.getItem("high scores");
 	var scoresArray;
 
 	if (storedscores === null) {
@@ -177,7 +177,7 @@ function storeHighScores(event) {
 
 
 	var scoresArrayString = JSON.stringify(scoresArray);
-	window.localStorage.setItem("your score", scoresArrayString);
+	window.localStorage.setItem("high scores", scoresArrayString);
 
 
 	keptscore();
@@ -194,7 +194,7 @@ function keptscore() {
 	quizend.style.display = "none";
 	scoreboard.style.display = "block";
 
-	var storedscores = localStorage.getItem("your score");
+	var storedscores = localStorage.getItem("high scores");
 
 	if (storedscores === null) {
 		return;
@@ -222,19 +222,19 @@ InitialBtn.addEventListener("click", function (event) {
 	storeHighScores(event);
 });
 
+viewscores.addEventListener("click", function (event) { keptscore(event); });
+
 restart.addEventListener("click", function () {
 	quizstart.style.display = "block";
 	scoreboard.style.display = "none";
 });
 
 clearscores.addEventListener("click", function () {
-	window.localStorage.removeItem("your score");
+	window.localStorage.removeItem("high scores");
 	highscore.innerHTML = "Scoreboard Cleared";
 });
 
 
-viewscores.addEventListener("click", function (event) {
-	keptscore(event);
-});
+
 
 
