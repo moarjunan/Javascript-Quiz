@@ -28,7 +28,7 @@ const questions = [
 
 
 var flex = document.getElementById("flex");
-var history = document.getElementById("history");
+var viewscores = document.getElementById("viewscores");
 var clock = document.getElementById("clock");
 var countdown = document.getElementById("countdown");
 var timesUp = document.getElementById("timesUp");
@@ -40,6 +40,7 @@ var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
+var lineBreak = document.getElementById("lineBreak");
 var answer = document.getElementById("answer");
 var quizend = document.getElementById("quizend");
 var finalScore = document.getElementById("finalscore");
@@ -56,10 +57,17 @@ var questionIndex = 0;
 var counter = 121;
 
 
+
 function startQuiz() {
     questionIndex = 0;
     counter = 120;
     countdown.textContent = counter;
+    initial.textContent = "";
+
+    quizstart.style.display = "none";
+    quiz.style.display = "block";
+    clock.style.display = "block";
+    timesUp.style.display = "none";
 
     var startTimer = setInterval(function() {
         counter--;
@@ -90,7 +98,6 @@ function nextQuestion() {
 
 function checkAnswer(solution) {
 
-    var lineBreak = document.getElementById("lineBreak");
     lineBreak.style.display = "block";
     answer.style.display = "block";
 
@@ -102,7 +109,9 @@ function checkAnswer(solution) {
         countdown.textContent = counter;
         answer.textContent = "Wrong! The correct answer is: " + questions[questionIndex].solution;
     }
+
     questionIndex++;
+   
     if (questionIndex < questions.length) {
         nextQuestion();
     } else {
@@ -120,6 +129,13 @@ function chooseD() { checkAnswer(3); }
 
 
 function gameOver() {
+    quizend.style.display = "block";
+    quiz.style.display = "none";
+    quizstart.style.display = "none";
+    clock.style.display = "none";
+    timesUp.style.display = "block";
+
+ 
     finalScore.textContent = correctAns;
 }
 
@@ -132,6 +148,14 @@ function storeHighScores(event) {
         alert("Please enter your initials!");
         return;
     } 
+
+    quizstart.style.display = "none";
+    clock.style.display = "none";
+    timesUp.style.display = "none";
+    quizend.style.display = "none";
+    scoreboard.style.display = "block";   
+
+  
     var savedHighScores = localStorage.getItem("high scores");
     var scoresArray;
 
@@ -161,6 +185,13 @@ function storeHighScores(event) {
 var i = 0;
 function showHighScores() {
 
+    quizstart.style.display = "none";
+    clock.style.display = "none";
+    quiz.style.display = "none";
+    timesUp.style.display = "none";
+    quizend.style.display = "none";
+    scoreboard.style.display = "block";
+
     var savedHighScores = localStorage.getItem("high scores");
 
     if (savedHighScores === null) {
@@ -188,10 +219,6 @@ InitialBtn.addEventListener("click", function(event){
     storeHighScores(event);
 });
 
-history.addEventListener("click", function(event) { 
-    showHighScores(event);
-});
-
 restart.addEventListener("click", function() {
     quizstart.style.display = "block";
     scoreboard.style.display = "none";
@@ -200,5 +227,11 @@ restart.addEventListener("click", function() {
 clearscores.addEventListener("click", function(){
     window.localStorage.removeItem("high scores");
     highscore.innerHTML = "High Scores Cleared!";
-    highscore.setAttribute("style", "font-family: 'Archivo', sans-serif; font-style: italic;")
 });
+
+
+viewscores.addEventListener("click", function(event) { 
+    showHighScores(event);
+});
+
+
